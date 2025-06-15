@@ -14,7 +14,7 @@ class ThankYouCard extends StatelessWidget {
       padding: EdgeInsets.only(left: 22, right: 23, top: 66),
       width: double.infinity,
       decoration: ShapeDecoration(
-        color: Color(0xFFE5E5E5),
+        color: Color(0xFFEDEDED),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),

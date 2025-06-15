@@ -8,41 +8,34 @@ class ThankYouViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      clipBehavior: Clip.none,
       children: [
-        SizedBox(height: 64),
-        Expanded(
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-              ThankYouCard(),
-              Positioned(
-                bottom: MediaQuery.sizeOf(context).height * 0.210,
-                left: 45,
-                right: 45,
-                child: CustomDashedLine(),
-              ),
-              Positioned(
-                left: 0,
-                bottom: MediaQuery.sizeOf(context).height * 0.2,
-                child: CircleAvatar(backgroundColor: Colors.white),
-              ),
-              Positioned(
-                right: 0,
-                bottom: MediaQuery.sizeOf(context).height * 0.2,
-                child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                ),
-              ),
-              Positioned(
-                left: 0,
-                right: 0,
-                top: -20,
-                child: CustomCheckIcon(),
-              )
-            ],
+        ThankYouCard(),
+        Positioned(
+          bottom: MediaQuery.sizeOf(context).height * 0.210,
+          left: 45,
+          right: 45,
+          child: CustomDashedLine(),
+        ),
+        Positioned(
+          left: 0,
+          bottom: MediaQuery.sizeOf(context).height * 0.2,
+          child: CircleAvatar(backgroundColor: Colors.white),
+        ),
+        Positioned(
+          right: 0,
+          bottom: MediaQuery.sizeOf(context).height * 0.2,
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
           ),
         ),
+        Positioned(
+          left: 0,
+          right: 0,
+          top: -20,
+          child: CustomCheckIcon(),
+        )
       ],
     );
   }

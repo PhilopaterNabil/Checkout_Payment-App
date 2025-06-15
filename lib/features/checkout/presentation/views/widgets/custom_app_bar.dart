@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title, this.iconBackPressed});
+  const CustomAppBar({super.key, this.title, this.iconBackPressed});
 
-  final String title;
+  final String? title;
   final void Function()? iconBackPressed;
 
   @override
@@ -18,7 +18,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: SvgPicture.asset(AppImageAssets.imagesArrow),
         ),
       ),
-      title: Text(title, style: AppTextStyles.font25BlackMedium),
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      title: title != null ? Text(title!, style: AppTextStyles.font25BlackMedium) : null,
       centerTitle: true,
     );
   }
