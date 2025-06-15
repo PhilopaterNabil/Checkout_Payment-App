@@ -1,4 +1,5 @@
 import 'package:checkout_payment_app/core/utils/app_image_assets.dart';
+import 'package:checkout_payment_app/features/checkout/presentation/views/payment_details_view.dart';
 import 'package:checkout_payment_app/features/checkout/presentation/views/widgets/custom_button.dart';
 import 'package:checkout_payment_app/features/checkout/presentation/views/widgets/order_info_item.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,10 @@ class MyCartViewBody extends StatelessWidget {
           Divider(height: 30, indent: 15, endIndent: 15, thickness: 2, color: Color(0xFFC7C7C7)),
           OrderInfoItem(title: 'Total', value: '\$50.97', isTotalPrice: true),
           SizedBox(height: 16),
-          CustomButton(title: 'Complete Payment', onPressed: () {}),
+          CustomButton(
+              title: 'Complete Payment',
+              onPressed: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const PaymentDetailsView()))),
           SizedBox(height: 12),
         ],
       ),

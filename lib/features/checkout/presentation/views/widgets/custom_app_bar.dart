@@ -3,16 +3,22 @@ import 'package:checkout_payment_app/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class MyCartViewAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const MyCartViewAppBar({super.key});
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBar({super.key, required this.title, this.iconBackPressed});
+
+  final String title;
+  final void Function()? iconBackPressed;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       leading: Center(
-        child: SvgPicture.asset(AppImageAssets.imagesArrow),
+        child: GestureDetector(
+          onTap: iconBackPressed,
+          child: SvgPicture.asset(AppImageAssets.imagesArrow),
+        ),
       ),
-      title: Text('My Cart', style: AppTextStyles.font25BlackMedium),
+      title: Text(title, style: AppTextStyles.font25BlackMedium),
       centerTitle: true,
     );
   }
