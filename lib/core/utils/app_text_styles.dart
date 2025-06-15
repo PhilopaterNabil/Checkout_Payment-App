@@ -15,6 +15,13 @@ abstract class AppTextStyles {
     fontWeight: FontWeight.w400,
   );
 
+  static const TextStyle font22BlackMedium = TextStyle(
+    fontSize: 22,
+    fontFamily: 'Inter',
+    color: Colors.black,
+    fontWeight: FontWeight.w500,
+  );
+
   static const TextStyle font25BlackMedium = TextStyle(
     fontSize: 25,
     fontFamily: 'Inter',

@@ -10,21 +10,18 @@ class OrderInfoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(title,
-              style: isTotalPrice
-                  ? AppTextStyles.font24BlackSemiBold
-                  : AppTextStyles.font18BlackRegular),
-          Text(value,
-              style: isTotalPrice
-                  ? AppTextStyles.font24BlackSemiBold
-                  : AppTextStyles.font18BlackRegular),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(title,
+            style: isTotalPrice
+                ? AppTextStyles.font24BlackSemiBold
+                : AppTextStyles.font18BlackRegular),
+        Text(value,
+            style: isTotalPrice
+                ? AppTextStyles.font24BlackSemiBold
+                : AppTextStyles.font18BlackRegular),
+      ],
     );
   }
 }
