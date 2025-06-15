@@ -2,6 +2,7 @@ import 'package:checkout_payment_app/core/utils/app_text_styles.dart';
 import 'package:checkout_payment_app/features/checkout/presentation/views/widgets/card_info_widget.dart';
 import 'package:checkout_payment_app/features/checkout/presentation/views/widgets/order_info_item.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ThankYouCard extends StatelessWidget {
   const ThankYouCard({super.key});
@@ -45,6 +46,33 @@ class ThankYouCard extends StatelessWidget {
           ),
           SizedBox(height: 30),
           CardInfoWidget(),
+          Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Icon(
+                FontAwesomeIcons.barcode,
+                size: 64,
+              ),
+              Container(
+                height: 58,
+                width: 113,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(width: 1.5, color: Color(0xFF34A853)),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    'PAID',
+                    style: AppTextStyles.font24BlackSemiBold.copyWith(color: Color(0xFF34A853)),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: ((MediaQuery.sizeOf(context).height * 0.210 - 27) / 2) - 29)
         ],
       ),
     );
