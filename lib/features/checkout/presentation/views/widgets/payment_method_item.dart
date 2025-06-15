@@ -17,7 +17,7 @@ class PaymentMethodItem extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         height: 62,
         width: 103,
-        margin: EdgeInsets.only(left: 20, top: 2),
+        margin: EdgeInsets.only(left: 20, top: 20),
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
