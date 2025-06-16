@@ -16,6 +16,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           Navigator.of(context)
               .pushReplacement(MaterialPageRoute(builder: (context) => const ThankYouView()));
         } else if (state is PaymentFailure) {
+          Navigator.of(context).pop();
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.errorMessage)));
         }
       },
