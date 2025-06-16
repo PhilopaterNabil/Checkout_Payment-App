@@ -3,7 +3,10 @@ import 'package:flutter_svg/svg.dart';
 
 class PaymentMethodItem extends StatelessWidget {
   const PaymentMethodItem(
-      {super.key, required this.imagePath, this.isSelected = false, required this.onTap});
+      {super.key,
+      required this.imagePath,
+      this.isSelected = false,
+      required this.onTap});
 
   final String imagePath;
   final bool isSelected;

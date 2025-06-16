@@ -20,8 +20,9 @@ class OrderInfoItem extends StatelessWidget {
       children: [
         Text(
           title,
-          style:
-              isTotalPrice ? AppTextStyles.font24BlackSemiBold : AppTextStyles.font18BlackRegular,
+          style: isTotalPrice
+              ? AppTextStyles.font24BlackSemiBold
+              : AppTextStyles.font18BlackRegular,
         ),
         Text(
           value,
