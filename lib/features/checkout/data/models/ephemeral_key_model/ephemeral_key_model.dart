@@ -39,7 +39,8 @@ class EphemeralKeyModel {
     data['id'] = id;
     data['object'] = object;
     if (associatedObjects != null) {
-      data['associated_objects'] = associatedObjects!.map((v) => v.toJson()).toList();
+      data['associated_objects'] =
+          associatedObjects!.map((v) => v.toJson()).toList();
     }
     data['created'] = created;
     data['expires'] = expires;

@@ -7,7 +7,8 @@ class PaymentIntentInputModel {
   String? statementDescriptorSuffix;
   String? metadata;
 
-  PaymentIntentInputModel({required this.amount, required this.currency, required this.customerId});
+  PaymentIntentInputModel(
+      {required this.amount, required this.currency, required this.customerId});
 
   toJson() => {
         'amount': '${amount}00',

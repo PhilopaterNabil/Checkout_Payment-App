@@ -25,7 +25,12 @@ class MyCartViewBody extends StatelessWidget {
           SizedBox(height: 3),
           OrderInfoItem(title: 'Shipping', value: '\$8'),
           SizedBox(height: 2),
-          Divider(height: 30, indent: 15, endIndent: 15, thickness: 2, color: Color(0xFFC7C7C7)),
+          Divider(
+              height: 30,
+              indent: 15,
+              endIndent: 15,
+              thickness: 2,
+              color: Color(0xFFC7C7C7)),
           OrderInfoItem(title: 'Total', value: '\$50.97', isTotalPrice: true),
           SizedBox(height: 16),
           CustomButton(

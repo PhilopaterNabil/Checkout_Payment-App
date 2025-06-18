@@ -11,9 +11,11 @@ class PaymentCubit extends Cubit<PaymentState> {
   PaymentCubit(this.checkoutRepo) : super(PaymentInitial());
   final CheckoutRepo checkoutRepo;
 
-  Future makePayment({required PaymentIntentInputModel paymentIntentInputModel}) async {
+  Future makePayment(
+      {required PaymentIntentInputModel paymentIntentInputModel}) async {
     emit(PaymentLoading());
-    var result = await checkoutRepo.makePayment(paymentIntentInputModel: paymentIntentInputModel);
+    var result = await checkoutRepo.makePayment(
+        paymentIntentInputModel: paymentIntentInputModel);
     result.fold(
       (left) => emit(PaymentFailure(errorMessage: left.errorMessage)),
       (right) => emit(PaymentSuccess()),

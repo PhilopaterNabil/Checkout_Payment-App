@@ -33,15 +33,23 @@ class ThankYouCard extends StatelessWidget {
           SizedBox(height: 42),
           Column(
             children: [
-              OrderInfoItem(title: 'Date', value: '01/24/2023', isSemiBoldValue: true),
+              OrderInfoItem(
+                  title: 'Date', value: '01/24/2023', isSemiBoldValue: true),
               SizedBox(height: 20),
-              OrderInfoItem(title: 'Time', value: '10:15 AM', isSemiBoldValue: true),
+              OrderInfoItem(
+                  title: 'Time', value: '10:15 AM', isSemiBoldValue: true),
               SizedBox(height: 20),
-              OrderInfoItem(title: 'To', value: 'Sam Louis', isSemiBoldValue: true),
+              OrderInfoItem(
+                  title: 'To', value: 'Sam Louis', isSemiBoldValue: true),
               SizedBox(height: 6),
               Divider(
-                  height: 48, indent: 15, endIndent: 15, thickness: 2, color: Color(0xFFC7C7C7)),
-              OrderInfoItem(title: 'Total', value: '\$50.97', isTotalPrice: true),
+                  height: 48,
+                  indent: 15,
+                  endIndent: 15,
+                  thickness: 2,
+                  color: Color(0xFFC7C7C7)),
+              OrderInfoItem(
+                  title: 'Total', value: '\$50.97', isTotalPrice: true),
             ],
           ),
           SizedBox(height: 30),
@@ -66,13 +74,16 @@ class ThankYouCard extends StatelessWidget {
                 child: Center(
                   child: Text(
                     'PAID',
-                    style: AppTextStyles.font24BlackSemiBold.copyWith(color: Color(0xFF34A853)),
+                    style: AppTextStyles.font24BlackSemiBold
+                        .copyWith(color: Color(0xFF34A853)),
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: ((MediaQuery.sizeOf(context).height * 0.210 - 27) / 2) - 29)
+          SizedBox(
+              height:
+                  ((MediaQuery.sizeOf(context).height * 0.210 - 27) / 2) - 29)
         ],
       ),
     );
