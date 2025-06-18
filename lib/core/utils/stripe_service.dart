@@ -24,8 +24,7 @@ class StripeService {
     return paymentIntentModel;
   }
 
-  Future initPaymentSheet(
-      {required InitPaymentSheetInputModel paymentIntentInputModel}) async {
+  Future initPaymentSheet({required InitPaymentSheetInputModel paymentIntentInputModel}) async {
     await Stripe.instance.initPaymentSheet(
       paymentSheetParameters: SetupPaymentSheetParameters(
         paymentIntentClientSecret: paymentIntentInputModel.clientSecret,
@@ -40,11 +39,9 @@ class StripeService {
     await Stripe.instance.presentPaymentSheet();
   }
 
-  Future<void> makePayment(
-      {required PaymentIntentInputModel paymentIntentInputModel}) async {
+  Future<void> makePayment({required PaymentIntentInputModel paymentIntentInputModel}) async {
     var paymentIntentModel = await createPaymentIntent(paymentIntentInputModel);
-    var ephemeralKeyModel =
-        await createEphemeralKey(customerId: paymentIntentModel.customer);
+    var ephemeralKeyModel = await createEphemeralKey(customerId: paymentIntentModel.customer);
 
     var initPaymentSheetInputModel = InitPaymentSheetInputModel(
       clientSecret: paymentIntentModel.clientSecret!,
@@ -56,8 +53,7 @@ class StripeService {
     await presentPaymentSheet();
   }
 
-  Future<EphemeralKeyModel> createEphemeralKey(
-      {required String customerId}) async {
+  Future<EphemeralKeyModel> createEphemeralKey({required String customerId}) async {
     var reponse = await apiService.post(
       body: {'customer': customerId},
       contentType: Headers.formUrlEncodedContentType,
